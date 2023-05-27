@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-
+from character.hero.hero import Hero_3Skill, Hero_4Skill
 class PlayerAbstract(ABC):
     @abstractmethod
     def buy_diamond(self):
@@ -31,6 +31,7 @@ class Player(PlayerAbstract):
         self.__heroes_owned = heroes_owned
         self.__battle_point = battle_point
         self.__diamonds = diamonds
+        # self.__hero_used_in_game: 
         super().__init__()
     
     def get_username(self):

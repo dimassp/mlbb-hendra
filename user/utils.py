@@ -17,6 +17,9 @@ def get_user_account(username):
     user_account = data.get(username)
     return user_account
     
+def create_player_object_from_existing_object(username, password, heroes_owned, battle_point, diamonds):
+    player = Player(username, password, heroes_owned, battle_point, diamonds)
+    return player
 
 def create_new_user():
     write_per_character("Enter your username: ", 0.02, 1)
@@ -49,7 +52,8 @@ def create_user_dict(username, password):
             "username": username,
             "password": password,
             "current_rank": 0,
-            "total_diamond": 0,
+            "battle_point": 0,
+            "diamonds": 0,
             "heroes_owned": {}
         }
     }

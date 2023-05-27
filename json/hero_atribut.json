@@ -1,6 +1,7 @@
 {
     "Gord": {
         "skills": 3,
+        "role": ["Mage"],
         "damage_type": "Magic",
         "basic_attack_damage": 52.5,
         
@@ -25,6 +26,7 @@
     },
     "Layla": {
         "skills": 3,
+        "role": ["Marksman"],
         "damage_type": "Physical",
         "basic_attack_damage": 100,
         
@@ -46,8 +48,10 @@
         },
         "mystery_level": 1
     },
+    
     "Fredrin": {
         "skills": 4,
+        "role": ["Tank"],
         "damage_type": "Physical",
         "basic_attack_damage": 100,
         
