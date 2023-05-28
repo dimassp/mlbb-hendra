@@ -62,12 +62,12 @@ class Classic(Game):
                                    )
     
     def start_game(self):
-        print(f"classic game.")
-        print(f"player username: {self.get_player().get_username()}")
-        print(f"player password: {self.get_player().get_password()}")
-        print(f"player current_rank: {self.get_player().get_current_rank()}")
-        print(f"player heroes_owned: {self.get_player().get_heroes_owned()}")
-        print(f"player battle_point: {self.get_player().get_battle_point()}")
+        # print(f"classic game.")
+        # print(f"player username: {self.get_player().get_username()}")
+        # print(f"player password: {self.get_player().get_password()}")
+        # print(f"player current_rank: {self.get_player().get_current_rank()}")
+        # print(f"player heroes_owned: {self.get_player().get_heroes_owned()}")
+        # print(f"player battle_point: {self.get_player().get_battle_point()}")
         self.pick_hero()
         time.sleep(5)
         pass

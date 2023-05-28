@@ -48,6 +48,54 @@
         },
         "mystery_level": 1
     },
+    "Lancelot": {
+        "skills": 3,
+        "role": ["Assassin"],
+        "damage_type": "Physical",
+        "basic_attack_damage": 100,
+        
+        "skill1_name": "Malefic Bomb",
+        "skill1_damage": 270,
+        "skill1_duration": 10,
+        
+        "skill2_name": "Void Projectile",
+        "skill2_damage": 80,
+        "skill2_duration": 7,
+        
+        "skill3_name": "Destruction Rush",
+        "skill3_damage": 350,
+        "skill3_duration": 34,
+        "hero_skin": {
+            "basic_skin": "basic_skin",
+            "elite_skin": "elite_skin",
+            "legend_skin": "legend_skin"
+        },
+        "mystery_level": 1
+    },
+    "Hayabusa": {
+        "skills": 3,
+        "role": ["Assassin"],
+        "damage_type": "Physical",
+        "basic_attack_damage": 100,
+        
+        "skill1_name": "Malefic Bomb",
+        "skill1_damage": 270,
+        "skill1_duration": 10,
+        
+        "skill2_name": "Void Projectile",
+        "skill2_damage": 80,
+        "skill2_duration": 7,
+        
+        "skill3_name": "Destruction Rush",
+        "skill3_damage": 350,
+        "skill3_duration": 34,
+        "hero_skin": {
+            "basic_skin": "basic_skin",
+            "elite_skin": "elite_skin",
+            "legend_skin": "legend_skin"
+        },
+        "mystery_level": 1
+    },
     
     "Fredrin": {
         "skills": 4,

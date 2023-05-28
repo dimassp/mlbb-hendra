@@ -4,7 +4,7 @@ from os import system, name
 users_json_path = r'D:\PROGRAMMING\python-3.10.0\hendra\MLBB\json\users.json'
 last_login_json_path = r'D:\PROGRAMMING\python-3.10.0\hendra\MLBB\json\last_login_user.json'
 heroes_json_dict =  r'D:\PROGRAMMING\python-3.10.0\hendra\MLBB\json\hero_atribut.json'
-def clear_screen(sleeptime):
+def clear_screen(sleeptime: int):
     if name == 'nt':
         time.sleep(sleeptime)
         _ = system('cls')

@@ -42,6 +42,7 @@ class Hero(HeroAbstract):
         self.__hero_name = hero_name
         self.__damage_type = damage_type
         self.__role = role
+        self.__is_picked = False
         self.__is_banned = False
         self.__basic_attack_damage = basic_attack_damage
         
@@ -68,6 +69,11 @@ class Hero(HeroAbstract):
     def get_role(self):
         return self.__role
     
+    #GET STATUS IS HERO PICKED
+    def get_is_picked(self):
+        return self.__is_picked
+    
+    #GET STATUS IS HERO BANNED
     def get_is_banned(self):
         return self.__is_banned
     
@@ -106,6 +112,14 @@ class Hero(HeroAbstract):
     def get_skill3_duration(self):
         return self.__skill3_duration
     
+    #SET STATUS IS HERO PICKED
+    def set_is_picked(self, value: bool):
+        self.__is_picked = value
+    
+    #GET STATUS IS HERO BANNED
+    def set_is_banned(self, value: bool):
+        self.__is_banned = value
+        
     def use_skill_1(self):
         print("Skill 1 used")
     
@@ -115,8 +129,6 @@ class Hero(HeroAbstract):
     def use_skill_3(self):
         print("Skill 3 used")
     
-    def set_is_banned(self, value: bool):
-        self.__is_banned = value
         
     def heal(self):
         print("Heal used")
