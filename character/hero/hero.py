@@ -42,6 +42,7 @@ class Hero(HeroAbstract):
         self.__hero_name = hero_name
         self.__damage_type = damage_type
         self.__role = role
+        self.__is_banned = False
         self.__basic_attack_damage = basic_attack_damage
         
         self.__skill1_damage = skill1_damage
@@ -63,9 +64,12 @@ class Hero(HeroAbstract):
     #GET DAMAGE TYPE
     def get_damage_type(self):
         return self.__damage_type
-    
+    #GET HERO TYPE (EX: MARKSMAN)
     def get_role(self):
         return self.__role
+    
+    def get_is_banned(self):
+        return self.__is_banned
     
     #GET BASICK ATTACK DAMAGE
     def get_basic_attack_damage(self):
@@ -111,6 +115,9 @@ class Hero(HeroAbstract):
     def use_skill_3(self):
         print("Skill 3 used")
     
+    def set_is_banned(self, value: bool):
+        self.__is_banned = value
+        
     def heal(self):
         print("Heal used")
     

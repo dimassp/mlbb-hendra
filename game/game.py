@@ -1,6 +1,7 @@
 import time
 from abc import ABC, abstractmethod
 from user.user import Player
+from game.utils import classic_or_below_epic_pick
 class GameAbstract(ABC ):
     @abstractmethod
     def pick_hero(self):
@@ -19,15 +20,15 @@ class Game(GameAbstract):
     def __init__(self, player1: Player):
         self.__is_loopable = True,
         self.__player1 = player1
-        self.__computer1 = Player('Computer 1','computer1computer1',['Gord','Layla'])
-        self.__computer2 = Player('Computer 2','computer2computer2',['Gord','Layla'])
-        self.__computer3 = Player('Computer 3','computer3computer3',['Gord','Layla'])
-        self.__computer4 = Player('Computer 4','computer4computer4',['Gord','Layla'])
-        self.__computer5 = Player('Computer 5','computer5computer5',['Gord','Layla'])
-        self.__computer6 = Player('Computer 6','computer6computer6',['Gord','Layla'])
-        self.__computer7 = Player('Computer 7','computer7computer7',['Gord','Layla'])
-        self.__computer8 = Player('Computer 8','computer8computer8',['Gord','Layla'])
-        self.__computer9 = Player('Computer 9','computer9computer9',['Gord','Layla'])
+        self.computer1 = Player('Computer 1','computer1computer1',['Gord','Layla'])
+        self.computer2 = Player('Computer 2','computer2computer2',['Gord','Layla'])
+        self.computer3 = Player('Computer 3','computer3computer3',['Gord','Layla'])
+        self.computer4 = Player('Computer 4','computer4computer4',['Gord','Layla'])
+        self.computer5 = Player('Computer 5','computer5computer5',['Gord','Layla'])
+        self.computer6 = Player('Computer 6','computer6computer6',['Gord','Layla'])
+        self.computer7 = Player('Computer 7','computer7computer7',['Gord','Layla'])
+        self.computer8 = Player('Computer 8','computer8computer8',['Gord','Layla'])
+        self.computer9 = Player('Computer 9','computer9computer9',['Gord','Layla'])
     
     def get_is_loopable(self):
         return self.__is_loopable
@@ -53,7 +54,12 @@ class Classic(Game):
         super().__init__(player1)
         
     def pick_hero(self):
-        pass
+        classic_or_below_epic_pick(player1=self.get_player(), player2=self.computer1,
+                                   player3=self.computer2, player4=self.computer3,
+                                   player5=self.computer4, player6=self.computer5,
+                                   player7=self.computer6, player8=self.computer7,
+                                   player9=self.computer8, player10=self.computer9
+                                   )
     
     def start_game(self):
         print(f"classic game.")
@@ -62,6 +68,7 @@ class Classic(Game):
         print(f"player current_rank: {self.get_player().get_current_rank()}")
         print(f"player heroes_owned: {self.get_player().get_heroes_owned()}")
         print(f"player battle_point: {self.get_player().get_battle_point()}")
+        self.pick_hero()
         time.sleep(5)
         pass
     
