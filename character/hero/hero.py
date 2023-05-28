@@ -34,14 +34,14 @@ class HeroAbstract(ABC):
 
 class Hero(HeroAbstract):
     def __init__(self, 
-                 hero_name: str, damage_type: str, basic_attack_damage: int,
+                 hero_name: str, damage_type: str, basic_attack_damage: int, role: list,
                  skill1_damage: int, skill1_name: str, skill1_duration: float,
                  skill2_damage: int, skill2_name: str, skill2_duration: float,
                  skill3_damage: int, skill3_name: str, skill3_duration: float,
                  ):
-        self.__hero_name =hero_name
+        self.__hero_name = hero_name
         self.__damage_type = damage_type
-        
+        self.__role = role
         self.__basic_attack_damage = basic_attack_damage
         
         self.__skill1_damage = skill1_damage
@@ -60,13 +60,16 @@ class Hero(HeroAbstract):
     def get_hero_name(self):
         return self.__hero_name
     
-    #GET BASICK ATTACK DAMAGE
-    def get_basic_attack_damage(self):
-        return self.__basic_attack_damage
-    
     #GET DAMAGE TYPE
     def get_damage_type(self):
         return self.__damage_type
+    
+    def get_role(self):
+        return self.__role
+    
+    #GET BASICK ATTACK DAMAGE
+    def get_basic_attack_damage(self):
+        return self.__basic_attack_damage
     
     ## GET SKILL DAMAGE
     def get_skill1_damage(self):
@@ -121,17 +124,18 @@ class Hero(HeroAbstract):
             
 class Hero_3Skill(Hero):
     def __init__(self,
-                 hero_name: str, damage_type: str, basic_attack_damage: int,
+                 hero_name: str, damage_type: str, basic_attack_damage: int, role: list,
                  skill1_damage: int, skill1_name: str, skill1_duration: float, 
                  skill2_damage: int, skill2_name: str, skill2_duration: float, 
                  skill3_damage: int, skill3_name: str, skill3_duration: float):
-        super().__init__(hero_name, damage_type, basic_attack_damage, skill1_damage, skill1_name, skill1_duration, skill2_damage, skill2_name, skill2_duration, skill3_damage, skill3_name, skill3_duration)
+        super().__init__(hero_name, damage_type, basic_attack_damage, role, skill1_damage, skill1_name, skill1_duration, skill2_damage, skill2_name, skill2_duration, skill3_damage, skill3_name, skill3_duration)
     
     def my_own_hero_encoder(self):
         dictionary = {
             "skills": 4,
             "damage_type": self.get_damage_type(),
             "basic_attack_damage": self.get_basic_attack_damage(),
+            "role": self.get_role(),
             
             "skill1_name": self.get_skill1_name(),
             "skill1_damage": self.get_skill1_damage(),
@@ -149,12 +153,12 @@ class Hero_3Skill(Hero):
         
 class Hero_4Skill(Hero):
     def __init__(self, 
-                    hero_name: str, damage_type: str, basic_attack_damage: int,
+                    hero_name: str, damage_type: str, basic_attack_damage: int, role: list,
                     skill1_damage: int, skill1_name: str, skill1_duration: float, 
                     skill2_damage: int, skill2_name: str, skill2_duration: float, 
                     skill3_damage: int, skill3_name: str, skill3_duration: float,
                     skill4_damage: int, skill4_name: str, skill4_duration: float):
-        super().__init__(hero_name, damage_type, basic_attack_damage, skill1_damage, skill1_name, skill1_duration, skill2_damage, skill2_name, skill2_duration, skill3_damage, skill3_name, skill3_duration)
+        super().__init__(hero_name, damage_type, basic_attack_damage, role, skill1_damage, skill1_name, skill1_duration, skill2_damage, skill2_name, skill2_duration, skill3_damage, skill3_name, skill3_duration)
         self.__skill4_damage = skill4_damage
         self.__skill4_name = skill4_name
         self.__skill4_duration = skill4_duration
@@ -175,6 +179,7 @@ class Hero_4Skill(Hero):
             "skills": 4,
             "damage_type": self.get_damage_type(),
             "basic_attack_damage": self.get_basic_attack_damage(),
+            "role": self.get_role(),
             
             "skill1_name": self.get_skill1_name(),
             "skill1_damage": self.get_skill1_damage(),

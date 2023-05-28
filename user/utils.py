@@ -16,10 +16,6 @@ def get_user_account(username):
         data = json.load(users)
     user_account = data.get(username)
     return user_account
-    
-def create_player_object_from_existing_object(username, password, heroes_owned, battle_point, diamonds):
-    player = Player(username, password, heroes_owned, battle_point, diamonds)
-    return player
 
 def create_new_user():
     write_per_character("Enter your username: ", 0.02, 1)

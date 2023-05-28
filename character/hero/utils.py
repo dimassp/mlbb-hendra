@@ -4,14 +4,16 @@ from character.hero.hero import Hero_3Skill, Hero_4Skill
 from utils import heroes_json_dict
 heroes_dict = dict()
 
-def generate_heroes():
-    heroes = None
+def get_all_heroes():
     with open(heroes_json_dict) as json_file:
-        data = json.load(json_file)
-    heroes = data
+        heroes = json.load(json_file)
+    return heroes
+def generate_heroes():
+    heroes = get_all_heroes()
     for hero in heroes:
         total_skill = heroes[hero].get('skills')
         damage_type = heroes[hero].get('damage_type')
+        role = heroes[hero].get('role')
         basic_attack_damage = heroes[hero].get('basic_attack_damage')
         
         skill1_name = heroes[hero].get('skill1_name')
@@ -31,6 +33,7 @@ def generate_heroes():
                 hero_name=hero,
                 damage_type=damage_type,
                 basic_attack_damage=basic_attack_damage,
+                role=role,
                 skill1_name=skill1_name,
                 skill1_damage=skill1_damage,
                 skill1_duration=skill1_duration,
@@ -50,7 +53,7 @@ def generate_heroes():
                 hero_name=hero,
                 damage_type=damage_type,
                 basic_attack_damage=basic_attack_damage,
-                
+                role=role,
                 skill1_name=skill1_name,
                 skill1_damage=skill1_damage,
                 skill1_duration=skill1_duration,

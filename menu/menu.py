@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from utils import write_per_character, clear_screen
 from user.user import Player
+from game.game import Ranked, Classic, Brawl
 import time, json
 
 class MenuAbstract(ABC):
@@ -73,6 +74,10 @@ class MainMenu(Menu):
     def play_classic(self):
         print(f"player: {self.get_player().get_username()}")
         print(f"The game is started playing in classic mode")
+        classic = Classic(self.get_player())
+        while classic.get_is_loopable():
+            classic.start_game()
+        
         
     def play_ranked(self):
         print(f"player: {self.get_player().get_username()}")
