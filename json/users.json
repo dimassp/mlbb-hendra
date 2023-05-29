@@ -1,5 +1,4 @@
 {
-   
    "dimasdimas": {
       "username": "dimasdimas",
       "password": "dimasdimas",
@@ -57,6 +56,69 @@
    "dimassamidun": {
       "username": "dimassamidun",
       "password": "dimassamidun",
+      "current_rank": 0,
+      "battle_point": 0,
+      "diamonds": 0,
+      "heroes_owned": {
+         "Gord": {
+            "skills": 4,
+            "damage_type": "Magic",
+            "basic_attack_damage": 52.5,
+            "role": [
+               "Mage"
+            ],
+            "skill1_name": "Mystic Projectile",
+            "skill1_damage": 270,
+            "skill1_duration": 10,
+            "skill2_name": "Mystic Injunction",
+            "skill2_damage": 270,
+            "skill2_duration": 34,
+            "skill3_name": "Mystic Gush",
+            "skill3_damage": 350,
+            "skill3_duration": 34
+         },
+         "Layla": {
+            "skills": 4,
+            "damage_type": "Physical",
+            "basic_attack_damage": 100,
+            "role": [
+               "Marksman"
+            ],
+            "skill1_name": "Malefic Bomb",
+            "skill1_damage": 270,
+            "skill1_duration": 10,
+            "skill2_name": "Void Projectile",
+            "skill2_damage": 270,
+            "skill2_duration": 34,
+            "skill3_name": "Destruction Rush",
+            "skill3_damage": 350,
+            "skill3_duration": 34
+         },
+         "Fredrin": {
+            "skills": 4,
+            "damage_type": "Physical",
+            "basic_attack_damage": 100,
+            "role": [
+               "Tank"
+            ],
+            "skill1_name": "Malefic Bomb",
+            "skill1_damage": 270,
+            "skill1_duration": 10,
+            "skill2_name": "Void Projectile",
+            "skill2_damage": 270,
+            "skill2_duration": 34,
+            "skill3_name": "Destruction Rush",
+            "skill3_damage": 350,
+            "skill3_duration": 34,
+            "skill4_name": "Destruction Rush",
+            "skill4_damage": 350,
+            "skill4_duration": 34
+         }
+      }
+   },
+   "dimassamid": {
+      "username": "dimassamid",
+      "password": "dimassamid",
       "current_rank": 0,
       "battle_point": 0,
       "diamonds": 0,

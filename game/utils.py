@@ -8,7 +8,6 @@ from copy import copy, deepcopy
 import json
 import time
 import random
-from threading import Thread
 def update_last_login_dict(username):
     return {
         "last_login": username
@@ -66,17 +65,6 @@ def set_ally_and_enemy_team(main_player: Player, all_players: list):
     # print(f"player left: {len(all_players)}")
     return ally_team, enemy_team
 
-# def countdount_a(is_time_up):
-#     for i in range(2):
-#         print(f"Time remaining function a: {i}")
-#         time.sleep(1)
-#     is_time_up = True
-
-# def countdount_b():
-#     for i in range(10,-1,-1):
-#         print(f"Time remaining function b: {i}")
-#         time.sleep(1)
-
 def show_heroes(team_ally_all_heroes):    
     for i, hero in enumerate(team_ally_all_heroes):
         if team_ally_all_heroes[hero].get_is_picked():
@@ -115,6 +103,7 @@ def classic_or_below_epic_pick(
     player9: Player,
     player10: Player,
     ):
+    clear_screen(0)
     all_players = [player1, player2, player3, player4, player5, player6, player7, player8, player9, player10]
     main_player = player1
     ally_team, enemy_team = set_ally_and_enemy_team(main_player, all_players=all_players)
@@ -126,13 +115,12 @@ def classic_or_below_epic_pick(
     print(f"Enemy team is picking")
     team_picking(main_player, enemy_team, team_enemy_all_heroes)
     print(f"Pick Phase completed...")
-    print(f"\n")
-    print(f"Ally team hero pick: ")
-    for player in ally_team:
-        print(f"{player}: {ally_team[player].get_hero_used_in_game()}")
-        
-        
-    print(f"Enemy team hero pick: ")
-    for player in enemy_team:
-        print(f"{player}: {enemy_team[player].get_hero_used_in_game()}")
+    clear_screen(2)
+    for i in range(15,-1,-1):
+        if i % 10 == 0:
+            print(f"Battle started in {i}", end='\r')
+            clear_screen(1)
+        else:
+            print(f"Battle started in {i}", end='\r')
+            time.sleep(1)
         
