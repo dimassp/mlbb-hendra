@@ -34,7 +34,7 @@ class HeroAbstract(ABC):
 
 class Hero(HeroAbstract):
     def __init__(self, 
-                 hero_name: str, damage_type: str, basic_attack_damage: int, role: list,
+                 hero_name: str, damage_type: str, basic_attack_damage: int, role: list, hero_image_selected_for_slot: str, select_hero_icon:str,
                  skill1_damage: int, skill1_name: str, skill1_duration: float,
                  skill2_damage: int, skill2_name: str, skill2_duration: float,
                  skill3_damage: int, skill3_name: str, skill3_duration: float,
@@ -42,6 +42,8 @@ class Hero(HeroAbstract):
         self.__hero_name = hero_name
         self.__damage_type = damage_type
         self.__role = role
+        self.__hero_image_selected_for_slot=hero_image_selected_for_slot
+        self.__select_hero_icon = select_hero_icon
         self.__is_picked = False
         self.__is_banned = False
         self.__basic_attack_damage = basic_attack_damage
@@ -65,9 +67,18 @@ class Hero(HeroAbstract):
     #GET DAMAGE TYPE
     def get_damage_type(self):
         return self.__damage_type
+    
+    #GET HERO SELECTED IMAGE FOR SLOT
+    def get_hero_image_selected_for_slot(self):
+        return self.__hero_image_selected_for_slot
+    
     #GET HERO TYPE (EX: MARKSMAN)
     def get_role(self):
         return self.__role
+    
+    #GET HERO IMAGE PATH
+    def get_select_hero_icon(self):
+        return self.__select_hero_icon
     
     #GET STATUS IS HERO PICKED
     def get_is_picked(self):
@@ -142,12 +153,16 @@ class Hero(HeroAbstract):
         
             
 class Hero_3Skill(Hero):
-    def __init__(self,
-                 hero_name: str, damage_type: str, basic_attack_damage: int, role: list,
-                 skill1_damage: int, skill1_name: str, skill1_duration: float, 
+    def __init__(self, hero_name: str, damage_type: str, basic_attack_damage: int, role: list, hero_image_selected_for_slot: str, 
+                 select_hero_icon: str, skill1_damage: int, skill1_name: str, skill1_duration: float, 
                  skill2_damage: int, skill2_name: str, skill2_duration: float, 
                  skill3_damage: int, skill3_name: str, skill3_duration: float):
-        super().__init__(hero_name, damage_type, basic_attack_damage, role, skill1_damage, skill1_name, skill1_duration, skill2_damage, skill2_name, skill2_duration, skill3_damage, skill3_name, skill3_duration)
+        super().__init__(hero_name, damage_type, basic_attack_damage, role, hero_image_selected_for_slot, select_hero_icon, skill1_damage, skill1_name, skill1_duration, skill2_damage, skill2_name, skill2_duration, skill3_damage, skill3_name, skill3_duration)
+    # def __init__(self, hero_name: str, damage_type: str, basic_attack_damage: int, role: list, 
+    #              select_hero_icon: str, skill1_damage: int, skill1_name: str, skill1_duration: float, 
+    #              skill2_damage: int, skill2_name: str, skill2_duration: float, 
+    #              skill3_damage: int, skill3_name: str, skill3_duration: float):
+        # super().__init__(hero_name, damage_type, basic_attack_damage, role, select_hero_icon, skill1_damage, skill1_name, skill1_duration, skill2_damage, skill2_name, skill2_duration, skill3_damage, skill3_name, skill3_duration)
     
     def my_own_hero_encoder(self):
         dictionary = {
@@ -155,6 +170,8 @@ class Hero_3Skill(Hero):
             "damage_type": self.get_damage_type(),
             "basic_attack_damage": self.get_basic_attack_damage(),
             "role": self.get_role(),
+            "hero_image_selected_for_slot": self.get_hero_image_selected_for_slot(),
+            "select_hero_icon": self.get_select_hero_icon(),
             
             "skill1_name": self.get_skill1_name(),
             "skill1_damage": self.get_skill1_damage(),
@@ -172,12 +189,20 @@ class Hero_3Skill(Hero):
         
 class Hero_4Skill(Hero):
     def __init__(self, 
-                    hero_name: str, damage_type: str, basic_attack_damage: int, role: list,
-                    skill1_damage: int, skill1_name: str, skill1_duration: float, 
-                    skill2_damage: int, skill2_name: str, skill2_duration: float, 
-                    skill3_damage: int, skill3_name: str, skill3_duration: float,
-                    skill4_damage: int, skill4_name: str, skill4_duration: float):
-        super().__init__(hero_name, damage_type, basic_attack_damage, role, skill1_damage, skill1_name, skill1_duration, skill2_damage, skill2_name, skill2_duration, skill3_damage, skill3_name, skill3_duration)
+                 hero_name: str, damage_type: str, basic_attack_damage: int, 
+                 role: list, hero_image_selected_for_slot: str, select_hero_icon: str, 
+                 skill1_damage: int, skill1_name: str, skill1_duration: float, 
+                 skill2_damage: int, skill2_name: str, skill2_duration: float, 
+                 skill3_damage: int, skill3_name: str, skill3_duration: float,
+                 skill4_damage: int, skill4_name: str, skill4_duration: float):
+        super().__init__(hero_name, damage_type, basic_attack_damage, role, hero_image_selected_for_slot, select_hero_icon, skill1_damage, skill1_name, skill1_duration, skill2_damage, skill2_name, skill2_duration, skill3_damage, skill3_name, skill3_duration)
+    # def __init__(self, 
+    #              hero_name: str, damage_type: str, basic_attack_damage: int, role: list, 
+    #              select_hero_icon: str, skill1_damage: int, skill1_name: str, skill1_duration: float, 
+    #              skill2_damage: int, skill2_name: str, skill2_duration: float, 
+    #              skill3_damage: int, skill3_name: str, skill3_duration: float,
+    #              ):
+    #     super().__init__(hero_name, damage_type, basic_attack_damage, role, select_hero_icon, skill1_damage, skill1_name, skill1_duration, skill2_damage, skill2_name, skill2_duration, skill3_damage, skill3_name, skill3_duration)
         self.__skill4_damage = skill4_damage
         self.__skill4_name = skill4_name
         self.__skill4_duration = skill4_duration
@@ -199,6 +224,8 @@ class Hero_4Skill(Hero):
             "damage_type": self.get_damage_type(),
             "basic_attack_damage": self.get_basic_attack_damage(),
             "role": self.get_role(),
+            "hero_image_selected_for_slot": self.get_hero_image_selected_for_slot(),
+            "select_hero_icon": self.get_select_hero_icon(),
             
             "skill1_name": self.get_skill1_name(),
             "skill1_damage": self.get_skill1_damage(),

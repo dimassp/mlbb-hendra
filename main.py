@@ -3,6 +3,11 @@ from game.utils import get_last_login_or_create_last_login_user
 from user.user import Player
 from menu.menu import MainMenu
 
+import pygame
+pygame.init()
+
+pygame.display.set_caption("Menu")
+
 if __name__ == '__main__':
     generate_heroes()
     last_user = get_last_login_or_create_last_login_user()
@@ -17,7 +22,9 @@ if __name__ == '__main__':
         battle_point=last_user['battle_point'],
         diamonds=last_user['diamonds']
     )
-    menu = MainMenu(last_user)    
-    while menu.get_is_loopable():
-        menu.menu_started()
+    
+    menu = MainMenu(last_user) 
+    menu.menu_started()   
+    # while menu.get_is_loopable():
+    #     menu.menu_started()
         

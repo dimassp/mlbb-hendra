@@ -28,12 +28,17 @@ def generate_heroes():
         skill3_damage = heroes[hero].get('skill3_damage')
         skill3_duration = heroes[hero].get('skill3_duration')
         
+        select_hero_icon  = heroes[hero].get('select_hero_icon')
+        hero_image_selected_for_slot = heroes[hero].get('hero_image_selected_for_slot')
         if total_skill == 3:
             new_hero = Hero_3Skill(
                 hero_name=hero,
                 damage_type=damage_type,
                 basic_attack_damage=basic_attack_damage,
                 role=role,
+                select_hero_icon=select_hero_icon,
+                hero_image_selected_for_slot=hero_image_selected_for_slot,
+                
                 skill1_name=skill1_name,
                 skill1_damage=skill1_damage,
                 skill1_duration=skill1_duration,
@@ -54,6 +59,9 @@ def generate_heroes():
                 damage_type=damage_type,
                 basic_attack_damage=basic_attack_damage,
                 role=role,
+                select_hero_icon=select_hero_icon,
+                hero_image_selected_for_slot=hero_image_selected_for_slot,
+                
                 skill1_name=skill1_name,
                 skill1_damage=skill1_damage,
                 skill1_duration=skill1_duration,
